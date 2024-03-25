@@ -26,11 +26,17 @@ curl -i \
 -H "Content-Type: application/json" \
 -X PUT http://localhost:8080/v1/libraryevent
 
-curl -i \
--d '{"libraryEventId":2,"libraryEventType": "UPDATE","book":{"bookId":456,"bookName":"Kafka Using Spring Boot 2.X","bookAuthor":"Alex"}}' \
--H "Content-Type: application/json" \
--X PUT http://localhost:8080/v1/libraryevent
 
+Equivalent command for Windows :
+Invoke-WebRequest -Uri "http://localhost:8080/v1/libraryevent" -Method POST -ContentType "application/json" -Body '{
+    "libraryEventId": 1,
+    "libraryEventType": "UPDATE",
+    "book": {
+        "bookId": 456,
+        "bookName": "Kafka Using Spring",
+        "bookAuthor": "Alice"
+    }
+}'
 
 
 PUT WITH ID
